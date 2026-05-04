@@ -1,8 +1,11 @@
----version: 0, author: DlSync
-CREATE OR REPLACE ROLE ANALYST;
----verify: SHOW ROLES LIKE 'ANALYST';
----rollback: DROP ROLE IF EXISTS ANALYST;
+---version: 0, author: admin
+create or replace role ANALYST;
+---rollback: drop role if exists ANALYST;
 
 ---version: 1, author: admin
-GRANT ROLE ANALYST TO ROLE ACCOUNTADMIN;
----rollback: REVOKE ROLE ANALYST FROM ROLE ACCOUNTADMIN;
+grant role ANALYST to role ACCOUNTADMIN;
+---rollback: revoke role ANALYST from role ACCOUNTADMIN;
+
+---version: 2, author: admin
+grant create database on account to role ANALYST;
+---rollback: revoke create database on account from role ANALYST;
