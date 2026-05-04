@@ -49,6 +49,7 @@ jobs:
           java -jar "$GITHUB_WORKSPACE/dlsync.jar" \
             plan \
             --script-root "$GITHUB_WORKSPACE/db_scripts" \
+            --log_level DEBUG \
             --profile "$PROFILE" 2>&1 | tee /tmp/dlsync-plan.log
           PLAN_OUTPUT=$(sed -n '/DEPLOYMENT PLAN/,/END PLAN/p' /tmp/dlsync-plan.log)
           if [ -z "$PLAN_OUTPUT" ]; then
