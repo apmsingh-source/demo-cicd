@@ -1,8 +1,0 @@
---- version: 0, author: DlSync
-CREATE OR REPLACE ROLE ANALYST;
---- verify: SHOW ROLES LIKE 'ANALYST';
---- rollback: DROP ROLE IF EXISTS ANALYST;
-
---- version: 1, author: DlSync
-GRANT ROLE ANALYST TO ROLE ACCOUNTADMIN;
---- rollback: REVOKE ROLE ANALYST FROM ROLE ACCOUNTADMIN;
