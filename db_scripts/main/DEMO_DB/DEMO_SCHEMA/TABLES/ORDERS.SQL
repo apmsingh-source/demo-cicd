@@ -1,4 +1,4 @@
----version: 0, author: demo_user
+---version: 0, author: apmsingh
 CREATE OR REPLACE TABLE ${MY_DB}.${MY_SCHEMA}.ORDERS(
     order_id NUMBER,
     customer_id NUMBER,
